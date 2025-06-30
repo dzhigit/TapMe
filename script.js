@@ -10,9 +10,12 @@ document.addEventListener('DOMContentLoaded', () => {
         score: 0, // 积分
         maxNumberInGame: 1, // 本局游戏中的最大数字
         isNewNumberRecord: false,
-        isNewScoreRecord: false
+        isNewScoreRecord: false,
     };
 
+   
+    
+    
     const gameBoard = document.getElementById('game-board');
     const clicksLeftElement = document.getElementById('clicks-left');
     const clicksProgressBar = document.getElementById('clicks-progress-bar');
@@ -20,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeToggle = document.getElementById('theme-toggle');
     const scoreElement = document.createElement('div');
     scoreElement.classList.add('score-display');
-    scoreElement.textContent = '积分: 0';
+    scoreElement.textContent = 'Score: 0';
     document.querySelector('.game-info').appendChild(scoreElement);
 
     // 创建历史记录显示元素
@@ -145,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // 更新积分显示
     function updateScoreDisplay() {
-        scoreElement.textContent = `积分: ${gameState.score}`;
+        scoreElement.textContent = `Score: ${gameState.score}`;
     }
     
     // 更新历史记录显示
@@ -154,8 +157,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const highestScore = localStorage.getItem('tapmeHighestScore') || 0;
         
         recordsElement.innerHTML = `
-            <div>最高数字: ${highestNumber}</div>
-            <div>最高积分: ${highestScore}</div>
+            <div>HiNumber: ${highestNumber}</div>
+            <div>Record: ${highestScore}</div>
         `;
     }
     
