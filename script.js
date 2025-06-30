@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 重新开始游戏按钮事件
     restartButton.addEventListener('click', () => {
         // 显示自定义确认弹窗，而不是使用confirm
-        showConfirmModal('确定要重新开始游戏吗？', '当前游戏进度将丢失。', () => {
+        showConfirmModal('Sure？', 'progress will be lost', () => {
             // 确认后执行
             localStorage.removeItem('tapmeGameState');
             initGame();
@@ -862,7 +862,7 @@ document.addEventListener('DOMContentLoaded', () => {
         modal.className = 'game-modal';
         
         // 设置弹框内容
-        let message = '<h2>游戏结束</h2>';
+        let message = '<h2>Game over.</h2>';
         
         // 添加游戏结果
         message += `<div class="game-results">
@@ -872,20 +872,20 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // 如果破纪录，添加恭喜信息
         if (gameState.isNewNumberRecord || gameState.isNewScoreRecord) {
-            message += '<div class="congrats">恭喜你打破记录！</div>';
+            message += '<div class="congrats">Record!</div>';
             
             if (gameState.isNewNumberRecord) {
-                message += `<p>新的最高数字: <span class="record-text">${gameState.maxNumberInGame}</span></p>`;
+                message += `<p>New top figure: <span class="record-text">${gameState.maxNumberInGame}</span></p>`;
             }
             
             if (gameState.isNewScoreRecord) {
-                message += `<p>新的最高分数: <span class="record-text">${gameState.score}</span></p>`;
+                message += `<p>New maximum score: <span class="record-text">${gameState.score}</span></p>`;
             }
         }
         
         // 添加按钮
         message += '<div class="modal-buttons">'+
-            '<button id="modal-restart-btn" class="modal-btn primary-btn">重新开始</button>'+
+            '<button id="modal-restart-btn" class="modal-btn primary-btn">restart</button>'+
         '</div>';
         
         modal.innerHTML = message;
@@ -916,8 +916,8 @@ document.addEventListener('DOMContentLoaded', () => {
             <h2>${title}</h2>
             <div class="modal-message">${message}</div>
             <div class="modal-buttons">
-                <button id="modal-cancel-btn" class="modal-btn">取消</button>
-                <button id="modal-confirm-btn" class="modal-btn primary-btn">确定</button>
+                <button id="modal-cancel-btn" class="modal-btn">cansel</button>
+                <button id="modal-confirm-btn" class="modal-btn primary-btn">yes</button>
             </div>
         `;
         
